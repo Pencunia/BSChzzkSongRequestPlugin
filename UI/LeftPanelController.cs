@@ -56,7 +56,7 @@ namespace ChzzkChat.UI
         void RequestClick(TableView tableVeiw, Request request)
         {
             selectedIdx = requestListData.FindIndex(song => song.Equals(request));
-            customRequestList.tableView.SelectCellWithIdx(selectedIdx);
+            customRequestList.TableView.SelectCellWithIdx(selectedIdx);
 
             ListUpdate();
         }
@@ -77,30 +77,30 @@ namespace ChzzkChat.UI
             {
                 requestListControl.DeclineRequest(selectedIdx);
                 selectedIdx = -1;
-                customRequestList.tableView.ClearSelection();
+                customRequestList.TableView.ClearSelection();
 
                 NotifyPropertyChanged();
-                customRequestList.tableView.ReloadData();
+                customRequestList.TableView.ReloadData();
             }
         }
 
         public void ListUpdate()
         {
-            if (requestListData == null || customRequestList?.tableView == null)
+            if (requestListData == null || customRequestList?.TableView == null)
             {
                 return;
             }
 
             if (selectedIdx > -1)
             {
-                customRequestList.tableView?.SelectCellWithIdx(selectedIdx);
+                customRequestList.TableView?.SelectCellWithIdx(selectedIdx);
             }
 
             if (reloadData)
             {
-                customRequestList.data = requestListData;
+                customRequestList.Data = requestListData;
 
-                customRequestList.tableView?.Invoke("ReloadData",0.1f);
+                customRequestList.TableView?.Invoke("ReloadData",0.1f);
             }
         }
 

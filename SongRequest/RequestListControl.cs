@@ -118,7 +118,7 @@ namespace ChzzkChat.SongRequest
             PluginConfig.Instance.Changed();
         }
 
-        async public Task LevelSelect(string songName)
+        public void LevelSelect(string songName)
         {
             int songIndex = 0;
             string songHash = "", cacheData = "";
@@ -126,7 +126,7 @@ namespace ChzzkChat.SongRequest
             LevelCollectionViewController levelCollectionViewController = Resources.FindObjectsOfTypeAll<LevelCollectionViewController>().FirstOrDefault();
 
             var levelsTableView = levelCollectionViewController.GetField<LevelCollectionTableView, LevelCollectionViewController>("_levelCollectionTableView");
-            List<IPreviewBeatmapLevel> beatmaps = levelsTableView.GetField<IReadOnlyList<IPreviewBeatmapLevel>, LevelCollectionTableView>("_previewBeatmapLevels").ToList();
+            List<BeatmapLevel> beatmaps = levelsTableView.GetField<IReadOnlyList<BeatmapLevel>, LevelCollectionTableView>("_beatmapLevels").ToList();
 
             try
             {
@@ -141,6 +141,7 @@ namespace ChzzkChat.SongRequest
             JObject songData = JObject.Parse(cacheData);
 
             songHash = (string)songData[$".\\Beat Saber_Data\\CustomLevels\\{songName}"]["songHash"];
+
             songIndex = beatmaps.FindIndex(x => (x.levelID.StartsWith("custom_level_" + songHash)));
 
             levelCollectionViewController?.SelectLevel(beatmaps[songIndex]);

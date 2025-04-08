@@ -7,6 +7,7 @@ using UnityEngine;
 using IPALogger = IPA.Logging.Logger;
 using IPAConfig = IPA.Config.Config;
 using ChzzkChat.UI;
+using BeatSaberMarkupLanguage.Util;
 
 namespace ChzzkChat
 {
@@ -33,6 +34,9 @@ namespace ChzzkChat
         {
             Configuration.PluginConfig.Instance = conf.Generated<Configuration.PluginConfig>();
             Log.Debug("Config loaded");
+
+            MainMenuAwaiter.MainMenuInitializing += UIManager.Instance.AddSettingsMenu;
+            MainMenuAwaiter.MainMenuInitializing += UIManager.Instance.AddLeftPanel;
         }
 
         #endregion
@@ -43,8 +47,6 @@ namespace ChzzkChat
             Log.Debug("OnChzzkChatStart");
             new GameObject("ChzzkChatController").AddComponent<ChzzkChatController>();
 
-            UIManager.Instance.AddSettingsMenu();
-            UIManager.Instance.AddLeftPanel();
             ChatListener chatListener = new ChatListener();
 
             _ = chatListener.Init();
