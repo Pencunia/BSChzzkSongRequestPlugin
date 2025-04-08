@@ -50,5 +50,7 @@ BSChzzkSongRequestPlugin for BeatSaber
 - chzzk api is generated so need connect here
 - and something more...
 
+FrameWork : .Net FrameWork 4.7.2
+
 만약 수정하고 싶으시다면 그냥 가져가서 하셔도 됩니다.<br>
 제가 유니티는 잘 몰라서 힘들어요...
