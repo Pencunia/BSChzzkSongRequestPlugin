@@ -3,6 +3,7 @@ BSChzzkSongRequestPlugin for BeatSaber
 
 ## Can Use. But Not Completed
 - It's not tested on other pc
+- when accept<br>file exist -> select<br>file not exist -> download<br>So if you didn't have map, click one more after refresh action 
 
 ## [Release](https://github.com/Pencunia/BSChzzkSongRequestPlugin/releases)
 
