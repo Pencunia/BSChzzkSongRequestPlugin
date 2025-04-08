@@ -50,5 +50,5 @@ BSChzzkSongRequestPlugin for BeatSaber
 - chzzk api is generated so need connect here
 - and something more...
 
-만약 수정하고 싶으시다면 그냥 가져가서 하셔도 됩니다.
+만약 수정하고 싶으시다면 그냥 가져가서 하셔도 됩니다.<br>
 유니티는 제가 잘 몰라서 힘들어요...
