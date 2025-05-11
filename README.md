@@ -53,5 +53,8 @@ BSChzzkSongRequestPlugin for BeatSaber
 
 FrameWork : .Net FrameWork 4.7.2
 
+아직 공식 api로 업데이트 되지 않았습니다.
+아직 초보라 뭔가를 할 때마다 문제에 봉착는 중입니다.
+
 만약 수정하고 싶으시다면 그냥 가져가서 하셔도 됩니다.<br>
 유니티는 잘 몰라서 힘들어요...🥕🥕
